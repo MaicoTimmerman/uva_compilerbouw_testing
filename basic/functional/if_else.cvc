@@ -1,0 +1,17 @@
+#include "civic.h"
+
+export int main() {
+    int a = 560;
+    int b = 320;
+    int c;
+
+	if (a + 5 > b) {
+        c = 0;
+    } else {
+        c = 1;
+    }
+
+    printInt(c);
+
+	return 0;
+}

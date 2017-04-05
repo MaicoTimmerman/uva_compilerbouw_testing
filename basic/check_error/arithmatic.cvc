@@ -1,0 +1,7 @@
+#include "civic.h"
+
+export int main() {
+    int a = -5 + -5;
+    int b = a * a * (a + a * a);
+
+}

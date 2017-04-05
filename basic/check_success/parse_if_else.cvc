@@ -1,0 +1,21 @@
+void foo() {
+    if (true) {
+        foo();
+    } else {
+        foo();
+    }
+
+    if (false)
+        foo();
+    else
+        foo();
+
+    // Whitespaces should not matter for your lexer
+    if      (    true   )
+foo();
+
+else     {
+
+
+    foo();
+}}

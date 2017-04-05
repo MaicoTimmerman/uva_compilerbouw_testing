@@ -1,0 +1,44 @@
+extern void printInt(int val);
+extern void printSpaces(int num);
+extern void printNewlines(int num);
+
+export int main() {
+    for(int i=0, 10) {
+        printInt(i);
+        printSpaces(1);
+    }
+
+    printNewlines(1);
+
+    for(int i=10, 0,-1) {
+        printInt(i);
+        printSpaces(1);
+    }
+
+    printNewlines(1);
+
+    for(int i=0, 10, 2) {
+        printInt(i);
+        printSpaces(1);
+    }
+
+    printNewlines(1);
+
+    for(int i=7, 0, -3) {
+        printInt(i);
+        printSpaces(1);
+    }
+
+    for(int i=0, 5) {
+        for(int j=0, 4) {
+            printInt(i);
+            printSpaces(1);
+            printInt(j);
+            printSpaces(1);
+        }
+
+        printNewlines(1);
+    }
+
+    return 0;
+}

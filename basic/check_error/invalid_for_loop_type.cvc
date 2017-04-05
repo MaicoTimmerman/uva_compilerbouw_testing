@@ -1,0 +1,11 @@
+void foo() {
+    // These loops should yield syntax errors
+
+    for (float f = 0.0, 10.0) {
+        foo();
+    }
+
+    for (bool b = true, false) {
+        foo();
+    }
+}

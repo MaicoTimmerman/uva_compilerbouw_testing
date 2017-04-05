@@ -1,0 +1,2 @@
+// this should not yield a syntax error
+int a;

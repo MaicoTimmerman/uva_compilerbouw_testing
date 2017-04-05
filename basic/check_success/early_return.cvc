@@ -1,0 +1,6 @@
+void foo(int p) {
+    int i = 1;
+    if (p > 1)
+        return;
+    i = 2;
+}

@@ -1,0 +1,4 @@
+extern void f(int a);
+export void f(bool a) {}   // context analysis error
+
+export extern void g() {}  // syntax error

@@ -1,0 +1,24 @@
+#include "civic.h"
+
+int a = 1;
+int b;
+
+bool funtrue() {
+    return true;
+}
+int funint() {
+    return 1;
+}
+export int main() {
+    int a = funint();
+    int b = funint();
+    a = funint();
+    return 0;
+}
+
+int funint2() {
+    int a = funint2();
+    bool a1 = funtrue() || funtrue() || funtrue() && funtrue() || funtrue();
+    for(int i = 0, 10, funint()) {}
+    return 1;
+}

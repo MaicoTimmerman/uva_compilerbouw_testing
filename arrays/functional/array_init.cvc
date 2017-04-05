@@ -1,0 +1,24 @@
+extern void printInt(int val);
+extern void printSpaces(int num);
+extern void printNewlines(int num);
+
+void printArray2D(int[n, m] a) {
+    for (int i = 0, n) {
+        for (int j = 0, m) {
+            printInt(a[i, j]);
+            printSpaces(1);
+        }
+        printNewlines(1);
+    }
+}
+
+export int main() {
+    int[2, 3] a = [[1, 2, 3], [4, 5, 6]];
+    int[2, 3] b = 7;
+
+    printArray2D(a);
+    printNewlines(1);
+    printArray2D(b);
+
+    return 0;
+}

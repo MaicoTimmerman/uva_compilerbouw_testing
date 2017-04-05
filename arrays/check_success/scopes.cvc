@@ -1,0 +1,50 @@
+extern void printInt(int val);
+extern void printNewlines(int num);
+
+int a = 1;
+int b = 2;
+
+int[4] c;
+
+extern int[m] d;
+
+int foo() {
+    int a = a + b + 1;
+    int m = m;
+    int baz(int c, int[b] d) {
+        int a = c + b;
+        return a + d[c];
+    }
+    a = a + 1;
+    return baz(a + d[m - 1], c);
+}
+
+int bar() {
+    int a = b;
+    int b;
+    return a;
+}
+
+void baz() {
+    int i;
+    printInt(i);
+    for (int i = 1, 10) {
+        printInt(i);
+        for (int i = 1, 10) {
+            //i = 0;
+            printInt(i);
+        }
+        printInt(i);
+    }
+    printInt(i);
+}
+
+export int main() {
+    printInt(foo());
+    printNewlines(1);
+    printInt(bar());
+    printNewlines(1);
+    baz();
+    printNewlines(1);
+    return 0;
+}

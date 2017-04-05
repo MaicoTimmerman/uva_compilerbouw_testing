@@ -1,0 +1,13 @@
+#include "civic.h"
+
+int rv = 0;
+
+void kaas() {
+    int rv = 1;
+}
+
+export int main() {
+    kaas();
+    printInt(rv);
+	return 0;
+}

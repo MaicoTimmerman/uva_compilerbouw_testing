@@ -1,0 +1,41 @@
+void fun1() {
+    void fun2() {
+        void fun3() {
+            void fun4() {
+                void fun5() {
+                    // all good
+                    fun1();
+                    fun2();
+                    fun3();
+                    fun4();
+                    fun5();
+                }
+                // all good
+                fun1();
+                fun2();
+                fun3();
+                fun4();
+                fun5();
+            }
+            fun1();
+            fun2();
+            fun3();
+            fun4();
+            fun5(); // ERROR
+        }
+        fun1();
+        fun2();
+        fun3();
+        fun4(); // ERROR
+        fun5(); // ERROR
+    }
+    fun1();
+    fun2();
+    fun3(); // ERROR
+    fun4(); // ERROR
+    fun5(); // ERROR
+}
+
+export int main() {
+    return 0;
+}

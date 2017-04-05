@@ -1,0 +1,8 @@
+#include "civic.h"
+
+export int main() {
+    printInt(a);
+	return 0;
+}
+
+int a = 5;

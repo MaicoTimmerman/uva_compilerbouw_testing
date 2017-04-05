@@ -1,0 +1,28 @@
+void vardec() {
+    int a;
+}
+
+void vardec_stat() {
+    int a;
+    a = 2;
+}
+
+int vardec_ret() {
+    int a;
+    return 2;
+}
+
+int vardec_stat_ret() {
+    int a;
+    a = 2;
+    return a;
+}
+
+int stat_ret() {
+    vardec();
+    return 2;
+}
+
+int ret() {
+    return 2;
+}

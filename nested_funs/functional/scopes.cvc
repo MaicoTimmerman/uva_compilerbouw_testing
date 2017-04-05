@@ -1,0 +1,97 @@
+/*
+ * Different shadowing concepts illustrated
+ */
+
+extern void printInt(int val);
+extern void printSpaces(int num);
+extern void printNewlines(int num);
+
+export int main()
+{
+    // this variable will be escaped below
+    int a = 123;
+
+    // The bir variable is an example of a local (ie non-escaped) variable
+    int bir = a;
+
+    /* A variable shadowed by an argument */
+    void bar (int a)
+    {
+        a = 11111;
+        printInt(a);
+        printNewlines(1);
+    }
+
+    /* A variable initalized by a variable of the same name */
+    void boz ()
+    {
+        int a = a;
+        a = a + 11111;
+        printInt(a);
+        printNewlines(1);
+    }
+
+    /* using a in the inner function makes it an escaped variable */
+    void biz ()
+    {
+        a = 55555;
+    }
+
+    bar(a);
+    printInt(a);
+    printNewlines(2);
+
+    baz(a);
+    printInt(a);
+    printNewlines(2);
+
+    bor(a);
+    printInt(a);
+    printNewlines(2);
+
+    boz();
+    printInt(a);
+    printNewlines(2);
+
+    printInt(bir);
+    printNewlines(2);
+
+    biz();
+    printInt(a);
+    printNewlines(2);
+
+    printInt(bir);
+    printNewlines(1);
+
+    return 0;
+
+}
+
+ /* An argument shadowed by a variable */
+void baz(int b){
+
+    // The variable b cannot be defined in the same scope hence it is in an inner function
+    void baz_inner(){
+        int b = 22222;
+        printInt(b);
+        printNewlines(1);
+    }
+
+    baz_inner();
+
+}
+
+
+ /* An argument shadowed by a variable */
+void bor(int b){
+    void baz_inner(){
+
+        void b() {
+            printInt(33333);
+            printNewlines(1);
+        }
+        b();
+    }
+
+    baz_inner();
+}

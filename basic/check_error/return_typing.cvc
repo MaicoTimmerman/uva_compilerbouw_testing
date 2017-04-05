@@ -1,0 +1,16 @@
+#include "civic.h"
+
+int testfun() {
+    int a;
+    return 1;
+    a = 1;
+}
+
+int testfun1() {
+    int a;
+    a = 1;
+    return 1.0;
+}
+export int main() {
+    return 0;
+}

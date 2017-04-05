@@ -1,0 +1,30 @@
+extern void printInt( int val);
+extern void printSpaces( int num);
+extern void printNewlines( int num);
+
+//extern int[n] ext;  FIXME
+int[3] glob;
+
+void printArray(int[n] a)
+{
+    for(int i = 0, n) {
+        printInt(a[i]);
+        printSpaces(1);
+    }
+    printNewlines(1);
+}
+
+void foo(int[n] param) {
+    printArray(param);  // Pass array parameter
+}
+
+export int main() {
+    int[5] loc = 4;
+    glob[0] = 1;
+    glob[1] = 2;
+    glob[2] = 3;
+    foo(loc);           // Pass local array
+    printArray(glob);   // Pass global array
+    //printArray(ext);    // Pass external array
+    return 0;
+}

@@ -1,0 +1,47 @@
+extern void printInt(int val);
+extern void printNewlines(int num);
+
+int a = 1;
+int b = 10;
+
+void foo() {
+    int a = 3;
+    int c = a;  // references local 'a'
+    printInt(a);        // 3
+    printNewlines(1);
+    printInt(c);        // 3
+    printNewlines(1);
+    printInt(b);        // 10
+    printNewlines(1);
+}
+
+void bar() {
+    // initializer uses global variable 'a'
+    int a = a + 1;
+    printInt(a);
+    printNewlines(1);
+}
+
+void baz() {
+    // initializer uses global variable 'b'
+    int a = b;
+    int b = 5;
+    printInt(a);
+    printNewlines(1);
+}
+
+export int main() {
+    foo();  // 3, 3, 10
+
+    bar();  // 2
+
+    printInt(a);  // 1
+    printNewlines(1);
+
+    baz();  // 10
+
+    printInt(b);  // 10
+    printNewlines(1);
+
+    return 0;
+}

@@ -1,0 +1,4 @@
+// test parsing of one global variable definition.
+
+extern float pi ;
+

@@ -1,0 +1,65 @@
+extern void printInt(int val);
+extern void printSpaces(int num);
+extern void printNewlines(int num);
+
+int ones = 0;
+int twos = 0;
+
+int one() {
+    ones = ones + 1;
+    return 1;
+}
+
+int two() {
+    twos = twos + 1;
+    return 2;
+}
+
+void printArray1D(int[n] a) {
+    for (int i = 0, n) {
+        printInt(a[i]);
+        if (i != n - 1) printSpaces(1);
+    }
+    printNewlines(1);
+}
+
+void printArray2D(int[n, m] a) {
+    for (int i = 0, n) {
+        for (int j = 0, m) {
+            printInt(a[i, j]);
+            if (j != m - 1) printSpaces(1);
+        }
+        printNewlines(1);
+    }
+}
+
+void printArray3D(int[n, m, o] a) {
+    for (int i = 0, n) {
+        for (int j = 0, m) {
+            for (int k = 0, o) {
+                printInt(a[i, j, k]);
+                if (k != o - 1) printSpaces(1);
+            }
+            if (j != m - 1) printSpaces(2);
+        }
+        printNewlines(1);
+    }
+}
+
+export int main() {
+    int[two()] a        = one();
+    int[two(), two()] b = [[1, one()], [2, two()]];
+
+    printArray1D(a);
+    printNewlines(1);
+
+    printArray2D(b);
+    printNewlines(1);
+
+    printInt(ones);
+    printSpaces(1);
+    printInt(twos);
+    printNewlines(1);
+
+    return 0;
+}

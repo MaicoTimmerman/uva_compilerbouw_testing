@@ -1,0 +1,114 @@
+#include "civic.h"
+
+int a = 1;
+int a2 = 1;
+int a3;
+float a4;
+float a5;
+int q2;
+
+void fun1(int a, int lb) { return; }
+void fun2(float a, float lb) { return; }
+void fun3(bool a, bool lb) { return; }
+void fun4(float a, bool lb, int c) { return; }
+
+int fun5(int a, int lb) { return 1;}
+int fun6(float a, float lb) { return 1;}
+int fun7(bool a, bool lb) { return 1;}
+int fun8(float a, bool lb, int c) { return 1;}
+
+bool fun9(int a, int lb) { return 1;}
+bool fun10(float a, float lb) { return 1;}
+bool fun11(bool a, bool lb) { return 1;}
+bool fun12(float a, bool lb, int c) { return 1;}
+
+float fun13(int a, int lb) { return 1;}
+float fun14(float a, float lb) { return 1;}
+float fun15(bool a, bool lb) { return 1;}
+float fun16(float a, bool lb, int c) { return 1;}
+
+int fun17() {}
+float fun18() {}
+void fun19() {}
+bool fun20() {}
+
+
+//test
+export int main() {
+    // correct
+    int a1 = fun5(1, 1);
+    int a2 = fun6(1.0, 1.0);
+    int a3 = fun7(true, false);
+    int a4 = fun8(1.0, false, true);
+
+    bool b1 = fun9(1, 1);
+    bool b2 = fun10(1.0, 1.0);
+    bool b3 = fun11(true, false);
+    bool b4 = fun12(1.0, false, true);
+
+    float c1 = fun13(1, 1);
+    float c2 = fun14(1.0, 1.0);
+    float c3 = fun15(true, false);
+    float c4 = fun16(1.0, false, true);
+
+    // wrong assignment
+    int d1 = fun1(1, 1);
+    float d2 = fun2(1.0, 1.0);
+    bool d3 = fun3(true, false);
+
+    float e2 = fun6(1.0, 1.0);
+    bool e3 = fun7(true, false);
+
+    int f1 = fun9(1, 1);
+    float f2 = fun10(1.0, 1.0);
+
+    int g1 = fun13(1, 1);
+    bool g2 = fun14(1.0, 1.0);
+
+    //correct
+    fun1(1, 1);
+    fun2(1.0, 1.0);
+    fun3(true, false);
+    fun4(1.0, false, true);
+
+    fun5(1, 1);
+    fun6(1.0, 1.0);
+    fun7(true, false);
+    fun8(1.0, false, true);
+
+
+    fun9(1, 1);
+    fun10(1.0, 1.0);
+    fun11(true, false);
+    fun12(1.0, false, true);
+
+    fun13(1, 1);
+    fun14(1.0, 1.0);
+    fun15(true, false);
+    fun16(1.0, false, true);
+
+    fun17();
+    fun18();
+    fun19();
+    fun20();
+
+    // incorrect number of params
+    fun1(1);
+    fun2(1.0, 1.0, 1.0);
+    fun3();
+    fun4(1.0, false, true, 1.0);
+
+    fun17(1);
+    fun18(1.0);
+    fun19(true);
+    fun20(1.0, 2.0);
+
+    // wrong type parameters
+    fun1(1, 1.0);
+    fun2(1, 1.0);
+    fun3(true, 1);
+    fun4(1.0, 1, true);
+
+
+    return 0;
+}

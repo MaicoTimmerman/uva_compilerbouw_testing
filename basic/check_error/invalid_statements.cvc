@@ -1,0 +1,10 @@
+void sum_arrayexp()
+{
+  int i = 1 + [0];
+  1 + 2;
+}
+
+void empty()
+{
+  ;
+}

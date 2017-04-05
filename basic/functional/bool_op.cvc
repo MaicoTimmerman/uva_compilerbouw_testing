@@ -1,0 +1,70 @@
+extern void printInt(int val);
+extern void printNewlines(int num);
+
+void printBool(bool b) {
+    if(b) {
+        printInt(1);
+    } else {
+        printInt(0);
+    }
+
+    printNewlines(1);
+}
+
+bool t() {
+    printInt(1);
+    return true;
+}
+
+bool f() {
+    printInt(0);
+    return false;
+}
+
+export int main() {
+    printBool(t() == f());
+    printBool(f() == t());
+    printBool(t() == t());
+    printBool(f() == f());
+    printNewlines(1);
+
+    printBool(t() != f());
+    printBool(f() != t());
+    printBool(t() != t());
+    printBool(f() != f());
+    printNewlines(1);
+
+    printBool(t() && f());
+    printBool(f() && t());
+    printBool(t() && t());
+    printBool(f() && f());
+    printNewlines(1);
+
+    printBool(t() || f());
+    printBool(f() || t());
+    printBool(t() || t());
+    printBool(f() || f());
+    printNewlines(1);
+
+    printBool(t() * f());
+    printBool(f() * t());
+    printBool(t() * t());
+    printBool(f() * f());
+    printNewlines(1);
+
+    printBool(t() + f());
+    printBool(f() + t());
+    printBool(t() + t());
+    printBool(f() + f());
+    printNewlines(1);
+
+    printBool((bool)5);
+    printBool((bool)0);
+    printNewlines(1);
+
+    printBool((bool)5.0);
+    printBool((bool)0.0);
+    printNewlines(1);
+
+    return 0;
+}

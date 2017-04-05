@@ -1,0 +1,8 @@
+extern int[n] arr;
+
+void foo(int[m] a) {}
+
+export int main() {
+    foo(arr);
+    return 0;
+}

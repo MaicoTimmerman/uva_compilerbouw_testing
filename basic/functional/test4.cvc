@@ -1,0 +1,13 @@
+#include "civic.h"
+
+
+int a;
+
+void test(int a, int b) {
+    printInt(a);
+}
+
+export int main() {
+
+    return 0;
+}

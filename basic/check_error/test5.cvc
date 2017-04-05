@@ -1,0 +1,32 @@
+#include "civic.h"
+
+int a = 1;
+int a2 = 1;
+int b2;
+
+void test(int a, int lb) {
+
+    int a2 = 1;
+    int b = 1;
+
+    for (int a = scanInt(printInt()), 10) {
+        for (int a = scanInt(main()), 10) {
+            // g = 10;
+            a2 = a;
+            a2 = 1;
+            for (int a = a, 10) {
+            }
+            a2 = a;
+        }
+        a2 = a;
+    }
+    a = 0;
+    return;
+}
+
+//test
+export int main() {
+    int a = 1;
+    printInt(10);
+    return 0;
+}

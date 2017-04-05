@@ -1,0 +1,30 @@
+/*
+ * Different shadowing concepts illustrated
+ */
+
+extern void printInt(int val);
+extern void printSpaces(int num);
+extern void printNewlines(int num);
+
+export int main()
+{
+    // this variable will be escaped below
+    int a = 123;
+
+    /* A variable initalized by a variable of the same name */
+    void boz ()
+    {
+        int a = a;
+        a = a + 11111;
+        printInt(a);
+        printNewlines(1);
+    }
+
+    /* using a in the inner function makes it an escaped variable */
+
+    boz();
+    printInt(a);
+    printNewlines(2);
+    return 0;
+
+}

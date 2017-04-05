@@ -1,0 +1,15 @@
+int a;
+float b;
+bool c;
+
+int d = 321;
+float e = 1.0;
+bool f = false;
+
+export int a2;
+export float b2;
+export bool c2;
+
+export int d2 = 321;
+export float e2 = 1.0;
+export bool f2 = false;

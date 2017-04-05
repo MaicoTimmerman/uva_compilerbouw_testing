@@ -1,0 +1,9 @@
+extern void printInt(int val);
+extern void printNewlines(int num);
+
+extern int foo;
+
+export int main() {
+    printInt(foo);
+    return 0;
+}

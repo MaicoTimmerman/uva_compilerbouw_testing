@@ -1,0 +1,153 @@
+#include "civic.h"
+
+export int main() {
+    // Different type
+    bool a = 8 - true;
+    bool a1 = 1.0 - true;
+
+    // minus
+    bool b = true - true;
+    int b1 = 1 - 1;
+    float b2 = 1.0 - 1.0;
+
+    // div
+    bool c = false / false;
+    int c1 = 1 / 1;
+    float c2 = 1.0 / 1.0;
+
+    // modulo
+    int d = 5 % 5;
+    bool d1 = true % true;
+    float d2 = 1.0 % 1.0;
+
+    // lt
+    int e = 5 > 4; //error should be bool
+    float e2 = 5.0 > 4.0; //error should be bool
+    int e3 = true > false;
+
+    int f = 5 == 4;
+    float f2 = 5.0 == 4.0;
+    int f3 = true != false;
+
+    int g = 5 || 4;
+    float g2 = 5.0 || 4.0;
+    int g3 = true && false;
+    bool g4 = true || false;
+
+    float z1 = -1.0;
+    float z2 = !1.0;
+    int z3 = -1;
+    int z4 = !1;
+    bool z5 = -true;
+    bool z6 = !true;
+    return 0;
+}
+
+void testifelse() {
+    if (true) {}
+    if (true || true) {
+        if (5) {}
+    }
+    if (5 > 4) {}
+    if (!true) {
+        if (5.0) {}
+    }
+    if (4.0 < 4.0) {
+        if (true) {}
+    }
+    if (5) {}
+    if (6.0) {}
+    if (6.0 || 6) {}
+    return;
+}
+
+void testwhile() {
+    while (true) {}
+    while (true || true) {
+        while (5) {}
+    }
+    while (5 > 4) {}
+    while (!true) {
+        while (5.0) {}
+    }
+    while (4.0 < 4.0) {
+        while (true) {}
+    }
+    while (5) {}
+    while (6.0) {}
+    while (6.0 || 6) {}
+    return;
+}
+
+void testdowhile() {
+    do {} while (true);
+    do {
+        do {} while (5);
+    } while (true || true);
+    do {} while (5 > 4);
+    do {
+        do {} while (5.0);
+    } while (!true);
+    do {
+        do {} while (true);
+    } while (4.0 < 4.0);
+    do {} while (5);
+    do {} while (6.0);
+    do {} while (6.0 || 6);
+    return;
+}
+
+void testfor() {
+    for(int a = 1, 10) {}
+    for(int a = 1.0, 10) {}
+    for(int a = 1, 10.0) {}
+    for(int a = true, false) {}
+    for(int a = 5 || 6.0, 1) {}
+
+    for(int a = 1, 10, 1) {}
+    for(int a = 1.0, 10, -2) {}
+    for(int a = 1, 10.0, !10) {}
+    for(int a = true, false, true) {}
+    for(int a = 5 || 6.0, true || true) {}
+    return;
+}
+
+void testcast() {
+    int a1 = (int) 2.0;
+    int a2 = (int) true;
+    int a3 = (int) 1;
+    float a4 = (float) 2.0;
+    float a5 = (float) 1;
+    float a6 = (float) true;
+    bool a7 = (bool) 2.0;
+    bool a8 = (bool) 1;
+    bool a9 = (bool) true;
+}
+
+void testvar() {
+    int a = 1;
+    float b = 1.0;
+    bool c = true;
+    int a1 = a;
+    int a2 = b;
+    int a3 = c;
+    float b1 = a;
+    float b2 = b ;
+    float b3 = c;
+    bool c1 = a;
+    bool c2 = b;
+    bool c3 = c;
+}
+
+void testreturn() {
+    return 1;
+}
+int testreturn1() {
+    return 1;
+}
+float testreturn2() {
+    return 1;
+}
+bool testreturn3() {
+    return true || true;
+}

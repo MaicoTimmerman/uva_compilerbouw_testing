@@ -1,0 +1,16 @@
+#include "civic.h"
+
+export int main() {
+    bool a = false;
+    int b;
+
+    if (!a) {
+        b = 0;
+    } else {
+        b = 5;
+    }
+
+    printInt(-b);
+
+    return 0;
+}

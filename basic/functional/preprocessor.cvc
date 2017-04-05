@@ -1,0 +1,9 @@
+#include "civic.h"
+#define N 100
+
+export int main() {
+    if (N == 100) {
+        printInt(N);
+    }
+    return 0;
+}

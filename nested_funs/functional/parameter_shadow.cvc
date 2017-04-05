@@ -1,0 +1,30 @@
+/*
+ * Different shadowing concepts illustrated
+ */
+
+extern void printInt(int val);
+extern void printSpaces(int num);
+extern void printNewlines(int num);
+
+export int main()
+{
+    // this variable will be escaped below
+    int a = 123;
+
+    baz(a);
+    printInt(a);
+    printNewlines(2);
+    return 0;
+}
+
+ /* An argument shadowed by a variable */
+void baz(int b){
+
+    // The variable b cannot be defined in the same scope hence it is in an inner function
+    void baz_inner(){
+        int b = 22222;
+        printInt(b);
+        printNewlines(1);
+    }
+    baz_inner();
+}

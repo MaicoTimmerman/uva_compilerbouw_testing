@@ -1,0 +1,34 @@
+extern void printInt(int val);
+
+void fun1() {
+
+    void fun2() {
+
+        void fun3() {
+
+            void fun4() {
+
+                void fun5() {
+
+                    printInt(5);
+                }
+                    printInt(4);
+
+                fun5();
+            }
+                    printInt(3);
+            fun4();
+        }
+                    printInt(2);
+        fun3();
+    }
+                    printInt(1);
+
+    fun2();
+}
+
+export int main() {
+    fun1();
+    //printInt(1);
+    return 0;
+}

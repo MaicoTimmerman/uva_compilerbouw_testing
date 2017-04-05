@@ -1,0 +1,37 @@
+extern void printInt(int val);
+
+void foo() {
+    void bar() {
+        void bar() {
+            printInt(1);
+            foobar();  // isrn 1
+        }
+
+        printInt(2);
+        bar();     // isrl
+        baz();     // isrg
+        foobar();  // isr
+    }
+
+    void foobar() {}
+
+    printInt(3);    // isrg
+    bar();          // isrl
+    baz();          // isrg
+}
+
+void bar() {
+    printInt(4);
+}
+
+void baz() {
+    printInt(5);
+    bar();
+}
+
+export int main() {
+    foo();
+    bar();
+    baz();
+    return 0;
+}

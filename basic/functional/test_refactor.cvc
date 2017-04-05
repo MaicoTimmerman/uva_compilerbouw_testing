@@ -1,0 +1,90 @@
+#include "civic.h"
+
+bool funfalse() {
+    return false;
+}
+bool funtrue() {
+    return true;
+}
+
+void testwhile() {
+    int a;
+    while(true) {
+        a = 1;
+    }
+    while(true) {
+        while(true) {
+            a = 1;
+        }
+        a = 1;
+    }
+    while(true) { }
+    while(true) { while(true) { }}
+
+    while(4<5) { }
+    while(4<5) { while(4<5) { }}
+
+}
+
+
+
+export int main() {
+    bool a1 = funtrue() || funtrue() || funtrue() && funtrue() || funtrue();
+    bool a2 = funtrue() || funtrue() && funtrue() || funtrue() || funtrue() && funtrue();
+    bool a3 = funtrue();
+
+
+    // Should become ternary;
+    bool b1 = (bool) 1;
+    bool b2 = (bool) 0;
+    bool b3 = (bool) 1.0;
+    bool b4 = (bool) 0.0;
+    int b5 = (int) true;
+    int b6 = (int) false;
+    float b7 = (float) true;
+    float b8 = (float) false;
+
+    bool b11 = (bool) (1+1);
+    bool b12 = (bool) (0+0);
+    bool b13 = (bool) (1.0+1.0);
+    bool b14 = (bool) (0.0+1.0);
+    int b15 = (int) (true + true);
+    int b16 = (int) (false + false);
+    float b17 = (float) (true + true);
+    float b18 = (float) (false + true);
+
+    // NOT
+    int c1 = (int) 1.0;
+    int c2 = (int) 10;
+    float c3 = (float) 1.0;
+    float c4 = (float) 10;
+
+    int d5 = (int) (1.0 + 1.0);
+    int d6 = (int) (10 + 10);
+    float d7 = (float) (1.0 + 1.0);
+    float d8 = (float) (10 + 10);
+    return 0;
+}
+
+int funint() { return 1;}
+
+void testfor() {
+    int val;
+    int val2;
+    // for (int a = 0, 10, 1 + 1) {}
+    //for (int a = 0, 10, 1 + funint()) {}
+    for (int a = 10, 1+ funint(), 0) {
+        for (int a = 10, 1+ funint(), (int)true) {}
+        for (int a = 10, 1+ funint(), 0) {
+            for (int a = 10, 1+ funint(), (int)true) {}
+            for (int a = 10, 1+ funint(), 0) {
+                for (int a = 10, 1+ funint(), (int)true) {}
+            }
+        }
+    }
+    for (int a = 10, 1+ funint(), (int)true) {}
+    val = (int)true;
+    for (int a = 0, 10, 1) {}
+    for (int a = 0, 10) { val = 3; }
+    for (int a = 0, 10, 1) { val = 3; }
+}
