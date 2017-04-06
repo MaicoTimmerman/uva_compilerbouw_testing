@@ -1,0 +1,22 @@
+#include "civic.h"
+
+// Recursive function to calculate greatest common denominator.
+int gcd(int u, int v) {
+    if (v != 0) {
+        return gcd(v, u % v);
+    }
+    return u;
+}
+
+export int main() {
+    int u;
+    int v;
+    void readUV() {
+        u = 11;
+        v = 3;
+    }
+    readUV();
+    printInt(gcd(u, v));
+    printNewlines(1);
+    return 0;
+}

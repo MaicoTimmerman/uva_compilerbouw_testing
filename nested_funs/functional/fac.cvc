@@ -1,0 +1,21 @@
+#include "civic.h"
+
+export int main() {
+    int n = 13;
+
+    // Calculate factorial of n
+    int factorial() {
+        // if (n == 0) return 1;
+        int result = 1;
+        for (int i = 1, n + 1) {
+            result = result * i;
+        }
+        return result;
+    }
+
+    // There is no factorial of negative numbers.
+    if (n < 0) return 1;
+    printInt(factorial());
+    printNewlines(1);
+    return 0;
+}

@@ -1,0 +1,11 @@
+#include "civic.h"
+
+export int main() {
+    int a = 0;
+    do {
+        a = a + 1;
+        printInt(a);
+    } while (a < 10);
+
+    return 0;
+}

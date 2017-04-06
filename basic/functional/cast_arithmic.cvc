@@ -1,0 +1,13 @@
+#include "civic.h"
+
+export int main() {
+    float a = 2.0;
+    int b = 1;
+    int c = 1;
+    bool z;
+    b = b + (int)a + c;
+    printInt(b);
+    z = (int)a < c;
+    printInt((int)b);
+    return 0;
+}

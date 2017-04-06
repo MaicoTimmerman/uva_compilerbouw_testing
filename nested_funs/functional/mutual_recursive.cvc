@@ -1,0 +1,24 @@
+#include "civic.h"
+
+export int main() {
+    int a = 0;
+    void fun1() {
+        if (a == 10) return;
+        a = a + 1;
+        printInt(a);
+        printNewlines(1);
+        fun2();
+    }
+    void fun2() {
+        if (a == 10) return;
+        a = a + 1;
+        printInt(a);
+        printNewlines(1);
+        fun1();
+    }
+
+    fun1();
+    a = 0;
+    fun2();
+    return 0;
+}
