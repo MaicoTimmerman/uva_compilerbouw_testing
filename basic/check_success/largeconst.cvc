@@ -1,0 +1,12 @@
+export int main() {
+    int i = 2147483647;
+    int j = -2147483647;
+
+    // Out of range
+    /*int k = 2147483648;*/
+    /*int l = -2147483648;*/
+
+    float f = 123456787654323456.0;
+
+    return 0;
+}

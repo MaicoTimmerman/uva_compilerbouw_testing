@@ -1,0 +1,10 @@
+
+int g;
+
+void g() { }
+
+export int main() {
+    g();
+    g = 10;
+    return 0;
+}

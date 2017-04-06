@@ -1,0 +1,23 @@
+#include "civic.h"
+
+export int main() {
+    int a;
+    int b;
+
+    int func() {
+        int c = 3;
+        int func() {
+            return 1;
+        }
+        c = func();
+        printInt(c);
+        return c;
+    }
+
+
+    a = func();
+    printInt(a);
+    return 0;
+}
+
+void a() { }
