@@ -1,0 +1,7 @@
+export int main() {
+    int i = 0;
+    do { } while(i < 10);
+
+    return 0;
+}
+

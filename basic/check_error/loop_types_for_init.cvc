@@ -1,0 +1,7 @@
+export int main() {
+    bool b = false;
+    for(int i = b, 10) {
+    }
+
+    return 0;
+}

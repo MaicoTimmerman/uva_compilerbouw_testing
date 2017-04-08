@@ -1,0 +1,20 @@
+#include "civic.h"
+
+export int main() {
+    bool b1 = true;
+    bool b2 = true;
+    bool b3 = true;
+    bool b4 = true;
+    bool b5 = false;
+
+    if(b1)
+        if(b2)
+            if(b3)
+                if(b4)
+                    if(b5)
+                        printInt(5);
+                    else
+                        printInt(6);
+
+	return 0;
+}

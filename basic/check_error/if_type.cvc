@@ -1,0 +1,5 @@
+export int main() {
+    int i;
+    if(i) { } else { }
+    return 0;
+}

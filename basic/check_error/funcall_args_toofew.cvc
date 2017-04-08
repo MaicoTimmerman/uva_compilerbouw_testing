@@ -1,0 +1,11 @@
+
+int a(int b, int c) {
+    return b;
+}
+
+export int main() {
+    int i = 1;
+    a(i);
+
+    return 0;
+}

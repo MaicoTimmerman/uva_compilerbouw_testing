@@ -1,0 +1,11 @@
+
+float a(int b) {
+    return 1.0;
+}
+
+export int main() {
+    int i = 2;
+    int j = a(i);
+
+    return 0;
+}

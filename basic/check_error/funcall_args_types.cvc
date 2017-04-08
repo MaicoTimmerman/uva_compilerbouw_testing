@@ -1,0 +1,12 @@
+
+int a(int b, float f) {
+    return b;
+}
+
+export int main() {
+    int b = 3;
+    float f = 3.0;
+    a(f, b);
+
+    return 0;
+}

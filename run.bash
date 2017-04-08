@@ -7,6 +7,8 @@ CIVCC=${CIVCC-../bin/civcc}
 CFLAGS=${CFLAGS-}
 RUN_FUNCTIONAL=${RUN_FUNCTIONAL-1}
 
+VALGRIND=${VALGRIND-0}
+
 ALIGN=52
 
 total_tests=0
@@ -31,7 +33,13 @@ function check_output {
     total_tests=$((total_tests+1))
     printf "%-${ALIGN}s " $file:
 
-    if $CIVCC $CGLAGS -o tmp.s $file > tmp.out 2>&1 &&
+    if [ $VALGRIND -eq 1 ]; then
+        cmd="valgrind --error-exitcode=127 $CIVCC"
+    else
+        cmd=$CIVCC
+    fi
+
+    if $cmd $CGLAGS -o tmp.s $file > tmp.out 2>&1 &&
        $CIVAS tmp.s -o tmp.o > tmp.out 2>&1 &&
        $CIVVM tmp.o > tmp.out 2>&1 &&
        mv tmp.out tmp.res &&
@@ -120,7 +128,13 @@ function check_return {
     total_tests=$((total_tests+1))
     printf "%-${ALIGN}s " $file:
 
-    if $CIVCC $CFLAGS $file -o tmp.s > tmp.out 2>&1
+    if [ $VALGRIND -eq 1 ]; then
+        cmd="valgrind --error-exitcode=127 $CIVCC"
+    else
+        cmd=$CIVCC
+    fi
+
+    if $cmd $CFLAGS $file -o tmp.s > tmp.out 2>&1
     then
         if [ $expect_failure -eq 1 ]; then
             echo_failed
@@ -129,16 +143,22 @@ function check_return {
             echo_success
         fi
     else
-        if [ $expect_failure -eq 1 ]; then
-            echo_success
-        else
+        status_code=$?
+        if [ $VALGRIND -eq 1 ] && [ $status_code -eq 127 ]; then
             echo_failed
-            echo -------------------------------
-            # cat tmp.out | grep "Invalid"
-            cat tmp.out
-            echo -------------------------------
-            echo
             failed_tests=$((failed_tests+1))
+        else
+            if [ $expect_failure -eq 1 ]; then
+                echo_success
+            else
+                echo_failed
+                echo -------------------------------
+                # cat tmp.out | grep "Invalid"
+                cat tmp.out
+                echo -------------------------------
+                echo
+                failed_tests=$((failed_tests+1))
+            fi
         fi
     fi
 
@@ -168,6 +188,11 @@ function run_dir {
 
     echo
 }
+
+if [ $VALGRIND -eq 1 ]; then
+    echo "RUNNING TESTS WITH VALGRIND"
+    echo ""
+fi
 
 for arg in $@; do
     run_dir $arg

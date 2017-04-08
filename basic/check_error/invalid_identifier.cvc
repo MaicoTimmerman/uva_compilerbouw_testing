@@ -1,0 +1,4 @@
+export int main() {
+    int _invalid_identifier = 0;
+    return 0;
+}
