@@ -1,0 +1,18 @@
+extern bool a;
+extern int b;
+extern float c;
+
+export int d(int e)
+{
+    int f;
+    int g;
+
+    int h(float i)
+    {
+        bool j;
+        float k;
+        int l;
+        int m;
+        int n;
+    }
+}
